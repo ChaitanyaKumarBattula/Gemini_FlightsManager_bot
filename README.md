@@ -11,12 +11,7 @@ Key features of Gemini Flight Manager include:
 
 For the purposes of Gemini Function Calling, you will only need `search_flights` and `book_flight` functions.
 
-<!-- ## Demo Video
-<video width="600" controls>
-  <source src="./demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-[Watch the demo video](assets/Recording 2024-08-04 193657.mp4) -->
+[Watch the demo video](assets/Recording.mp4) -->
 
 ## Requirements
 Before you begin, make sure you have the following installed on your system:
@@ -76,7 +71,7 @@ With the server running, access the API at http://127.0.0.1:8000. For interactiv
     -   Origin: BOS
     -   Destination: SFO
     -   Date: 2024-03-17
-![Document Upload]("assets/Flight-7.png")
+![Document Upload](assets/Flight-7.png)
 
 ## 3. Task☁️ Google Cloud Developer Setup
 - Download and Install: Follow the instructions on the Google Cloud SDK installation page to download and install the SDK.
