@@ -1,60 +1,111 @@
-# Gemini Flight Manager
+# Gemini - Flight Manager Chatbot
 
 ## Overview
+The Gemini Flight Manager is a powerful backend system constructed with FastAPI, aimed at managing and simulating flight-related tasks. This system offers a solid platform to handle various facets of flight management, such as flight creation, search, and booking functions.
 
-Gemini Flight Manager is a comprehensive backend system built using FastAPI, designed for managing and simulating flight-related operations. This system provides a robust platform for handling various aspects of flight management, including flight generation, search, and booking functionalities.
-
-The project leverages FastAPI's efficient and easy-to-use framework to create a high-performance, scalable solution ideal for flight data management. It comes equipped with an SQLite database (`flights.db`) pre-populated with initial data, allowing for quick deployment and testing.
+Utilizing FastAPI's efficient and user-friendly framework, the project delivers a high-performance, scalable solution tailored for managing flight data. It includes an SQLite database (flights.db) that comes pre-loaded with initial data, facilitating quick deployment and testing.
 
 Key features of Gemini Flight Manager include:
-- Advanced search capabilities to query flights based on criteria like origin, destination, and dates.
-- Booking system that handles seat availability across different classes and calculates costs accordingly.
+- Advanced Search Capabilities: Allows querying flights based on parameters such as origin, destination, and dates.
+- Booking System: Manages seat availability across various classes and calculates costs accordingly.
 
-Designed with extensibility and scalability in mind, Gemini Flight Manager is well-suited for both educational purposes and as a foundation for more complex flight management applications.
+For the purposes of Gemini Function Calling, you will only need `search_flights` and `book_flight` functions.
 
-**For the purposes of Gemini Function Calling, you will only need `search_flights` and `book_flight` functions.
+<!-- ## Demo Video
+<video width="600" controls>
+  <source src="./demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+[Watch the demo video](assets/Recording 2024-08-04 193657.mp4) -->
 
-## Installation
+## Requirements
+Before you begin, make sure you have the following installed on your system:
 
-### Prerequisites
-Before you begin, ensure you have the following installed on your system:
 - Python 3.6 or higher
 - FastAPI
-- Uvicorn, an ASGI server for FastAPI
+- Uvicorn: An ASGI server for FastAPI
 
-### Step-by-Step Installation Guide
+These components are essential to run and develop with the Gemini Flight Manager.
+## Detailed Tasks
+1. Task✨ Configuring Google Gemini
+2. Task: Clone Prebuilt FastAPI Server
+3. Task☁️ Google Cloud Developer Setup
+4. Task📞 Implement Function Calling with Tools
+5. Task📊 Integrate with Streamlit
+6. Task✈️ Develop the Book_Flight Tool
 
-1. **Clone the Repository**
-   
-   Start by cloning the repository to your local machine. Use the following command:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
 
-## Set Up a Virtual Environment (Optional but recommended)
+## 1. Task✨ Configuring Google Gemini
+- Visit the Google Cloud Platform and click on "Get Started for free."
+- Sign in with your Google Account, provide the required information, and complete the billing setup.
+- Agree to the terms and conditions.
+- Finalize the payment process to set up your Google Cloud Account.
+- Create a new project (e.g., "Gemini Flight").
+- Access the Google Cloud Console.
+- Navigate to the `Vertex AI` section and `enable all recommended APIs`.
 
-It's a good practice to create a virtual environment for your Python projects. This keeps your project dependencies isolated. If you have `virtualenv` installed, create a new environment with:
-
-```bash
-virtualenv venv
-source venv/bin/activate
+## 2. Task: Clone Prebuilt FastAPI Server
+### Cloning the Repository
+Begin by cloning the repository to your local machine using the following commands:
+```sh
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
 ```
-
-## Install Dependencies
-Inside the virtual environment, install all necessary dependencies by running:
-```bash
+### Set Up a Virtual Environment (Optional but Recommended)
+It's advisable to create a virtual environment for your Python projects to keep dependencies isolated. If you have virtualenv installed, create a new environment with:
+```sh
+python3 -m venv env
+```
+```sh
+source env/bin/activate
+```
+### Install necessary packages
+```sh
 pip install -r requirements.txt
 ```
-
-## Starting the FastAPI Server
-
-After the installation, you can start the FastAPI server using Uvicorn. Navigate to the project directory and run:
-
-```bash
+### Starting the FastAPI Server
+Once the dependencies are installed, you can start the FastAPI server using Uvicorn. Navigate to the project directory and run:
+```sh
 uvicorn main:app
 ```
+### Accessing the API
+With the server running, access the API at http://127.0.0.1:8000. For interactive API documentation, visit http://127.0.0.1:8000/docs, where you can test the API endpoints directly from your browser.
 
-## Accessing the API
-With the server running, you can access the API at `http://127.0.0.1:8000.`
+* **Testing the Endpoints**
+    To search for flights, use the following parameters:
+    -   Origin: BOS
+    -   Destination: SFO
+    -   Date: 2024-03-17
+![Document Upload]("assets/Flight-7.png")
 
-For interactive API documentation, visit `http://127.0.0.1:8000/docs`, where you can test the API endpoints directly from your browser.
+## 3. Task☁️ Google Cloud Developer Setup
+- Download and Install: Follow the instructions on the Google Cloud SDK installation page to download and install the SDK.
+- Initialize: gcloud to initialize the SDK.
+```sh
+Run gcloud init 
+```
+- Log In: Sign in with your Google Account credentials when prompted.
+- Project Selection: Choose an existing project or create a new one.
+- Optional Configuration: Set the default compute region and zone during the initialization process if desired.
+
+## 4. Task📞 Implement Function Calling with Tools
+- Creating the get_search_flights Function: Use a FunctionDeclaration to define the get_search_flights function.
+- Encapsulating in a Tool Class: Wrap the get_search_flights function within a Tool class.
+- Setting Up the Generative Model: Configure the GenerativeModel to use the encapsulated function.
+
+## 5. Task📊 Integrate with Streamlit
+- Developed a response handling system and integrated it with Streamlit to facilitate efficient communication with Google Gemini.
+
+## 6. Task✈️ Develop the Book_Flight Tool
+* **Developed the book_flight Function:**
+    - Added the book_flight function in Flight_Manager.py which sends a POST request to the prebuilt endpoint.
+* **Created FunctionDeclaration:**
+    - Created a new FunctionDeclaration for the book_flight_tool.
+* **Encapsulated Tools:**
+    - Encapsulated the book_flight_tool along with the search_tool.
+* **Configured the Model:**
+    - Configured the model to use both encapsulated tools.
+
+
+## Working of the Model:
+![Document Upload]("assets/Flight-6.png")
