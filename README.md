@@ -108,4 +108,4 @@ Run gcloud init
 
 
 ## Working of the Model:
-![Document Upload]("assets/Flight-6.png")
+![Document Upload](assets/Flight-6.png)
