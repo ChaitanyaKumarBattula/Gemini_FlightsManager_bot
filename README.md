@@ -14,7 +14,6 @@ For the purposes of Gemini Function Calling, you will only need `search_flights`
 Watch the demo video [here](assets/Recording.mp4).
 <video width="600" controls>
   <source src="https://github.com/ChaitanyaKumarBattula/Gemini_FlightsManager_bot/raw/main/assets/Recording.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 
 ## Requirements
