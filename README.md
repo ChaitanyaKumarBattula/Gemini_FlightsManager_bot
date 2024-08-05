@@ -11,6 +11,7 @@ Key features of Gemini Flight Manager include:
 
 For the purposes of Gemini Function Calling, you will only need `search_flights` and `book_flight` functions.
 
+[![Watch the video](https://github.com/ChaitanyaKumarBattula/Gemini_FlightsManager_bot/blob/77e807e841b5f8e6cf42168feb52ac6cdca947de/assets/Recording.mp4)]
 ## Requirements
 Before you begin, make sure you have the following installed on your system:
 
